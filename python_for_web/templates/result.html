@@ -1,0 +1,9 @@
+{% extends 'layout.html' %} {% block content %}
+<div class="container">
+    <h1>Result</h1>
+    <h2>{{ content }}</h2>
+    <h2> Total number of words: {{ content_length }}</h2>
+    <h2> Total number of letters: {{ total_letters }}</h2>
+    <h2> Most Frequent Word: {{ most_freq_word }}</h2>
+  </div>
+{% endblock %}
