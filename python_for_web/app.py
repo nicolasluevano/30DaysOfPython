@@ -31,6 +31,7 @@ def result():
     if request.method == 'POST':
         content = request.form.get('content')
         words = content.split()
+        word_set = set(words)
         content_length = len(words)
 
         def letter_count(content):
@@ -38,7 +39,7 @@ def result():
             for letter in content:
                 count += 1
             return count
-        
+
         def most_frequent_word(words):
             freq_word = words[0]
             count = 0
@@ -52,7 +53,14 @@ def result():
         total_letters = letter_count(content)
         most_freq_word = most_frequent_word(words)
 
-        return render_template('result.html', content=content, content_length=content_length, total_letters=total_letters, most_freq_word=most_freq_word)
+        return render_template(
+            'result.html',
+            content=content,
+            content_length=content_length,
+            total_letters=total_letters,
+            most_freq_word=most_freq_word,
+            word_set=word_set
+        )
 
 
 @app.route('/post', methods=['GET', 'POST'])

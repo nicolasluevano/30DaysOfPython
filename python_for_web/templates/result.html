@@ -5,5 +5,19 @@
     <h2> Total number of words: {{ content_length }}</h2>
     <h2> Total number of letters: {{ total_letters }}</h2>
     <h2> Most Frequent Word: {{ most_freq_word }}</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Word</th>
+                <th>Word Count</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for word in word_set %}
+            <tr></tr>
+            <td>{{ word }}</td>
+            {% endfor %}
+        </tbody>
+    </table>
   </div>
 {% endblock %}
