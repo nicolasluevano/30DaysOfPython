@@ -13,11 +13,12 @@
             </tr>
         </thead>
         <tbody>
-            {% for word in word_set %}
+            {% for word, count in sorted_dict.items() %}
             <tr></tr>
             <td>{{ word }}</td>
+            <td>{{ count }}</td>
             {% endfor %}
         </tbody>
     </table>
-  </div>
+</div>
 {% endblock %}
